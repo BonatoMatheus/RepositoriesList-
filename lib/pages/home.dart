@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:repositories_list/pages/favorites.dart';
+import 'package:repositories_list/pages/feed.dart';
+import 'package:repositories_list/pages/repository.dart';
 import 'package:repositories_list/pages/search.dart';
 
 class HomePage extends StatefulWidget {
@@ -8,25 +9,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
-  int _indiceAtual = 0;
+  int _indiceAtual = 1;
 
   @override
   Widget build(BuildContext context) {
-
     List<Widget> pages = [
       SearchPage(),
-      FavoritesPage(),
+      FeedPage(),
+      myRepositoriesPage()
     ];
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.red[900],
-        title: Image.asset(
-          "images/gitlogo.png",
-          width: 80,
-          height: 80,
-        ),
+        title: Text(""),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.account_circle),
@@ -42,7 +39,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   GetBody(List pages) {
-    return pages[_indiceAtual];
+    return Container(
+      padding: EdgeInsets.all(16),
+      child: pages[_indiceAtual],
+    );
   }
 
   getBottom() {
@@ -57,15 +57,16 @@ class _HomePageState extends State<HomePage> {
         items: [
           BottomNavigationBarItem(
               backgroundColor: Colors.red[900],
-              title: Text("Search"),
-              icon: Icon(Icons.search, color: Colors.white)
-          ),
+              title: Text("Favorites"),
+              icon: Icon(Icons.star, color: Colors.white)),
           BottomNavigationBarItem(
               backgroundColor: Colors.red[900],
-              title: Text("Favorites"),
-              icon: Icon(Icons.view_list, color: Colors.white)
-          ),
-        ]
-    );
+              title: Text("Home"),
+              icon: Icon(Icons.home, color: Colors.white)),
+          BottomNavigationBarItem(
+              backgroundColor: Colors.red[900],
+              title: Text("Search"),
+              icon: Icon(Icons.search, color: Colors.white))
+        ]);
   }
 }
