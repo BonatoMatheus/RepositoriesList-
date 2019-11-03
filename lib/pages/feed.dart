@@ -22,7 +22,8 @@ class _FeedPageState extends State<FeedPage> {
             clipBehavior: Clip.antiAlias,
             child: InkWell(
               onTap: () async {
-                //INSERIR ROTA
+                Navigator.pushNamed(context, '/search',
+                    arguments: "javascript");
               },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,18 +47,21 @@ class _FeedPageState extends State<FeedPage> {
             color: Colors.red[900],
             clipBehavior: Clip.antiAlias,
             child: InkWell(
-              onTap: () async {},
+              onTap: () async {
+                  Navigator.pushNamed(context, '/search',
+                      arguments: "dart");
+              },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   AspectRatio(
                     aspectRatio: 18 / 13,
-                    child: Image.asset('images/flutter.png', fit: BoxFit.fitWidth),
+                    child: Image.asset('images/dart.png', fit: BoxFit.fitWidth),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 16),
                     child: Center(
-                      child: Text('Flutter',
+                      child: Text('Dart',
                           style: TextStyle(fontSize: 15, color: Colors.white)),
                     ),
                   )
@@ -70,19 +74,20 @@ class _FeedPageState extends State<FeedPage> {
             clipBehavior: Clip.antiAlias,
             child: InkWell(
               onTap: () async {
-                //INSERIR ROTA
+                Navigator.pushNamed(context, '/search',
+                    arguments: "java");
               },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   AspectRatio(
                     aspectRatio: 18 / 13,
-                    child: Image.asset('images/react.png', fit: BoxFit.fitWidth),
+                    child: Image.asset('images/java.png', fit: BoxFit.fitWidth),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 21),
                     child: Center(
-                      child: Text('React',
+                      child: Text('Java',
                           style: TextStyle(fontSize: 15, color: Colors.white)),
                     ),
                   )
@@ -95,20 +100,21 @@ class _FeedPageState extends State<FeedPage> {
             clipBehavior: Clip.antiAlias,
             child: InkWell(
               onTap: () async {
-                //INSERIR ROTA
+                Navigator.pushNamed(context, '/search',
+                    arguments: "python");
               },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   AspectRatio(
                     aspectRatio: 18 / 13,
-                    child: Image.asset('images/angular.png', fit: BoxFit.fitWidth),
+                    child: Image.asset('images/python.png', fit: BoxFit.fitWidth),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 21),
                     child: Center(
                       child:
-                          Text('Angular', style: TextStyle(fontSize:15, color: Colors.white)),
+                          Text('Python', style: TextStyle(fontSize:15, color: Colors.white)),
                     ),
                   ),
                 ],
@@ -120,7 +126,8 @@ class _FeedPageState extends State<FeedPage> {
             clipBehavior: Clip.antiAlias,
             child: InkWell(
               onTap: () async {
-                //INSERIR ROTA
+                Navigator.pushNamed(context, '/search',
+                    arguments: "c#");
               },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -133,7 +140,7 @@ class _FeedPageState extends State<FeedPage> {
                     padding: EdgeInsets.only(top: 21),
                     child: Center(
                       child:
-                      Text('.Net Core', style: TextStyle(fontSize: 15, color: Colors.white)),
+                      Text('C#', style: TextStyle(fontSize: 15, color: Colors.white)),
                     ),
                   ),
                 ],
@@ -145,20 +152,21 @@ class _FeedPageState extends State<FeedPage> {
             clipBehavior: Clip.antiAlias,
             child: InkWell(
               onTap: () async {
-                //INSERIR ROTA
+                Navigator.pushNamed(context, '/search',
+                    arguments: "swift");
               },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   AspectRatio(
                     aspectRatio: 18 / 13,
-                    child: Image.asset('images/vue.png', fit: BoxFit.fitWidth),
+                    child: Image.asset('images/swift.png', fit: BoxFit.fitWidth),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 21),
                     child: Center(
                       child:
-                      Text('Vue JS', style: TextStyle(fontSize: 15, color: Colors.white)),
+                      Text('Swift', style: TextStyle(fontSize: 15, color: Colors.white)),
                     ),
                   ),
                 ],

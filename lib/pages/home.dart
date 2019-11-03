@@ -14,21 +14,21 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     List<Widget> pages = [
-      SearchPage(),
+      myRepositoriesPage(),
       FeedPage(),
-      myRepositoriesPage()
+      SearchPage()
     ];
 
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.red[900],
-        title: Text(""),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.account_circle),
-            onPressed: () {
-              print("conta");
+                backgroundColor: Colors.white,
+                appBar: AppBar(
+                  backgroundColor: Colors.red[900],
+                  title: Text(""),
+                  actions: <Widget>[
+                    IconButton(
+                      icon: Icon(Icons.account_circle),
+                      onPressed: () {
+                        print("conta");
             },
           ),
         ],
