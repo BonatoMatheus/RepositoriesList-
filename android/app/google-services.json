@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "412263898592",
+    "firebase_url": "https://dev-hiring-challenge.firebaseio.com",
+    "project_id": "dev-hiring-challenge",
+    "storage_bucket": "dev-hiring-challenge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412263898592:android:3c4c2f155d381f6c24df85",
+        "android_client_info": {
+          "package_name": "com.repositorieslist.repositories_list"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412263898592-15802errcrm6n9c09tn8haa6g6pg461e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7LDqvyYh9ynwisBcUKBiBJKNPiQmUMm8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412263898592-15802errcrm6n9c09tn8haa6g6pg461e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

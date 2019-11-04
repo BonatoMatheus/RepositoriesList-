@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:repositories_list/api/api.dart';
 import 'package:repositories_list/models/repository.dart';
+import 'package:repositories_list/pages/dialog.dart';
 import 'package:repositories_list/pages/repository.dart';
 
 import 'feed.dart';
@@ -17,7 +18,7 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     String language = ModalRoute.of(context).settings.arguments;
 
-    List<Widget> pages = [myRepositoriesPage(), FeedPage(), SearchPage()];
+    List<Widget> pages = [repositoriesPage(), FeedPage(), SearchPage()];
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -74,9 +75,9 @@ class _SearchPageState extends State<SearchPage> {
                                     height: 300,
                                     decoration: BoxDecoration(
                                         image: DecorationImage(
-                                            fit: BoxFit.fill,
-                                            image: NetworkImage(repository.avatar),
-                                        )
+                                      fit: BoxFit.fill,
+                                      image: NetworkImage(repository.avatar),
+                                    )
                                         // ignore: missing_return
                                         ),
                                   ),
@@ -97,11 +98,18 @@ class _SearchPageState extends State<SearchPage> {
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Text(
-                                        repository.nome,
+                                        repository.name,
                                         style: TextStyle(
                                           fontSize: 25,
                                         ),
                                       ),
+                                    ),
+                                    RaisedButton(
+                                      child: Text('Detalhes',
+                                          style: TextStyle(color: Colors.white)),
+                                      elevation: 8.0,
+                                      color: Colors.red[900],
+                                      onPressed: () => _showDetails(repositoryDetails: repository, index: index),
                                     ),
                                   ],
                                 )
@@ -132,6 +140,10 @@ class _SearchPageState extends State<SearchPage> {
           setState(() {
             _indiceAtual = indice;
           });
+
+          if (indice != null) {
+            Navigator.pushNamed(context, '/home');
+          }
         },
         items: [
           BottomNavigationBarItem(
@@ -148,9 +160,19 @@ class _SearchPageState extends State<SearchPage> {
               icon: Icon(Icons.search, color: Colors.white))
         ]);
   }
-}
 
-_getRepositories(language) {
-  Api api = Api();
-  return api.getRepositories(language);
+  void _showDetails({Repository repositoryDetails, int index}) async {
+    final repository = await showDialog<Repository>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return DialogRepository(repository: repositoryDetails);
+      },
+    );
+  }
+
+  _getRepositories(language) {
+    Api api = Api();
+    return api.getRepositories(language);
+  }
 }

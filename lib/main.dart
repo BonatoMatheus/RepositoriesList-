@@ -10,7 +10,7 @@ void main() => runApp(MaterialApp(
     '/home': (context) => HomePage(),
     '/feed': (context) => FeedPage(),
     '/search': (context) => SearchPage(),
-    '/repositories': (context) => myRepositoriesPage(),
+    '/repositories': (context) => repositoriesPage(),
   },
   home: HomePage(),
 ));

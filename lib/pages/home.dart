@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     List<Widget> pages = [
-      myRepositoriesPage(),
+      repositoriesPage(),
       FeedPage(),
       SearchPage()
     ];
